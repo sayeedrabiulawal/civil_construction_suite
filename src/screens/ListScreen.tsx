@@ -98,8 +98,8 @@ export default function ListScreen({
                             e.preventDefault();
                             setParams(draft ? { q: draft } : {});
                         }}
-                        className="field"
-                        style={{ marginBottom: 0, maxWidth: 420 }}
+                        className="field hero-search"
+                        role="search"
                     >
                         <label htmlFor="home-search">Find a calculator</label>
                         <div className="control">

@@ -131,7 +131,7 @@ export function gradationChart(
         x: {
             label: "Sieve size (mm)",
             scale: "log",
-            ticks: [...FM_SIEVES].reverse().concat(10),
+            ticks: [...[...FM_SIEVES].reverse(), 10],
         },
         y: {
             label: "Cumulative % passing",

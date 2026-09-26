@@ -344,8 +344,13 @@ export default function BoqScreen() {
                         <tbody>
                             {project.lines.map((line, index) => (
                                 <tr key={line.id}>
-                                    <td className="col-num">{index + 1}</td>
-                                    <td className="col-desc">
+                                    <td className="col-num" data-label="Item">
+                                        {index + 1}
+                                    </td>
+                                    <td
+                                        className="col-desc"
+                                        data-label="Description"
+                                    >
                                         <input
                                             type="text"
                                             aria-label={`Description for item ${index + 1}`}
@@ -370,7 +375,7 @@ export default function BoqScreen() {
                                             }
                                         />
                                     </td>
-                                    <td className="col-unit">
+                                    <td className="col-unit" data-label="Unit">
                                         <select
                                             aria-label={`Unit for item ${index + 1}`}
                                             value={line.unit}
@@ -387,7 +392,7 @@ export default function BoqScreen() {
                                             ))}
                                         </select>
                                     </td>
-                                    <td className="col-qty">
+                                    <td className="col-qty" data-label="Quantity">
                                         <input
                                             type="number"
                                             inputMode="decimal"
@@ -404,7 +409,7 @@ export default function BoqScreen() {
                                             }
                                         />
                                     </td>
-                                    <td className="col-rate">
+                                    <td className="col-rate" data-label="Rate">
                                         <input
                                             type="number"
                                             inputMode="decimal"
@@ -421,10 +426,16 @@ export default function BoqScreen() {
                                             }
                                         />
                                     </td>
-                                    <td className="col-amount">
+                                    <td
+                                        className="col-amount"
+                                        data-label="Amount"
+                                    >
                                         {formatQuantity(lineAmount(line))}
                                     </td>
-                                    <td className="col-actions">
+                                    <td
+                                        className="col-actions"
+                                        data-label="Actions"
+                                    >
                                         <button
                                             type="button"
                                             className="row-button"

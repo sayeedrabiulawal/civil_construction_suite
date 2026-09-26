@@ -78,7 +78,7 @@ export default function CalculatorScreen({ calc }: Props) {
     return (
         <>
             <div className="calc-header">
-                <div style={{ flex: 1, minWidth: 0 }}>
+                <div className="calc-title">
                     <div className="crumbs">
                         <Link to="/">Home</Link>
                         {" / "}
@@ -91,7 +91,6 @@ export default function CalculatorScreen({ calc }: Props) {
                 <button
                     type="button"
                     className={favorited ? "star on" : "star"}
-                    style={{ fontSize: 22 }}
                     aria-label={
                         favorited
                             ? "Remove from favourites"

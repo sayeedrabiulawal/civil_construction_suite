@@ -34,7 +34,7 @@ export default function HistoryScreen() {
                 </div>
             ) : (
                 <>
-                    <div className="calc-actions" style={{ marginBottom: 16 }}>
+                    <div className="page-actions">
                         <button
                             type="button"
                             className="button"
