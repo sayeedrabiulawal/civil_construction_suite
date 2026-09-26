@@ -1,0 +1,30 @@
+{
+    "name": "civil-construction-suite",
+    "private": true,
+    "version": "0.1.0",
+    "type": "module",
+    "description": "100+ civil engineering calculators and tools for construction materials, concrete, steel, RCC, foundations, soil, surveying, hydraulics, transportation, unit conversion and BOQ.",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc --noEmit && vite build",
+        "preview": "vite preview",
+        "typecheck": "tsc --noEmit",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "icons": "node scripts/generate-icons.mjs"
+    },
+    "dependencies": {
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-router-dom": "^6.26.2"
+    },
+    "devDependencies": {
+        "@types/node": "^26.6.3",
+        "@types/react": "^18.3.11",
+        "@types/react-dom": "^18.3.1",
+        "@vitejs/plugin-react": "^4.3.2",
+        "typescript": "^5.6.3",
+        "vite": "^5.4.9",
+        "vitest": "^2.1.9"
+    }
+}

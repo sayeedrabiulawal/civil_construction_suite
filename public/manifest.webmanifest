@@ -1,0 +1,62 @@
+{
+    "name": "Civil Construction Suite — Engineering Calculators",
+    "short_name": "Civil Suite",
+    "description": "100+ civil engineering calculators for construction materials, concrete, steel, RCC, foundations, soil, surveying, hydraulics, transportation, unit conversion and BOQ. Works offline.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "any",
+    "background_color": "#f5f7fa",
+    "theme_color": "#1d4ed8",
+    "categories": ["productivity", "utilities", "education"],
+    "lang": "en",
+    "dir": "ltr",
+    "icons": [
+        {
+            "src": "/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/icons/icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/icons/icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Brick Masonry",
+            "short_name": "Bricks",
+            "url": "/calc/brick-masonry"
+        },
+        {
+            "name": "Concrete Mix Materials",
+            "short_name": "Concrete",
+            "url": "/calc/concrete-mix-materials"
+        },
+        {
+            "name": "Steel Bar Weight",
+            "short_name": "Bar weight",
+            "url": "/calc/steel-bar-weight"
+        },
+        {
+            "name": "Unit Converter",
+            "short_name": "Convert",
+            "url": "/calc/convert-length"
+        }
+    ]
+}
