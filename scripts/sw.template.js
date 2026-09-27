@@ -11,6 +11,8 @@
  *                       the app works offline immediately after the first visit.
  *   • Navigations    -> network first, falling back to the cached shell.
  *   • Hashed assets  -> cache first. Names change per build, so never stale.
+ *   • /api/*         -> never touched. Server data is live, and the assistant
+ *                       must never be answered from a cache.
  *   • Other same-origin + web fonts -> stale-while-revalidate.
  */
 const VERSION = "__VERSION__";
@@ -121,6 +123,11 @@ self.addEventListener("fetch", (event) => {
 
     // Never cache the worker itself, so updates always land.
     if (url.pathname === "/sw.js") return;
+
+    // Server endpoints are live data, never cacheable. Without this the status
+    // probe would be served stale-while-revalidate, so a deployment that has
+    // just been given an API key would still claim the assistant is off.
+    if (url.pathname.startsWith("/api/")) return;
 
     if (request.mode === "navigate") {
         event.respondWith(networkFirst(request));

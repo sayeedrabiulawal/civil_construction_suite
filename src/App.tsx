@@ -9,7 +9,9 @@ import {
 } from "react-router-dom";
 import { CATEGORIES } from "@/core/categories";
 import { countByCategory } from "@/core/registry";
+import ChatWidget from "@/components/ChatWidget";
 import { useInstallPrompt } from "@/hooks/useInstallPrompt";
+import AssistantScreen from "@/screens/AssistantScreen";
 import BoqScreen from "@/screens/BoqScreen";
 import { CalculatorRoute } from "@/screens/CalculatorScreen";
 import HistoryScreen from "@/screens/HistoryScreen";
@@ -218,6 +220,17 @@ export default function App() {
 
                     <h3>Yours</h3>
                     <NavLink
+                        to="/assistant"
+                        className={({ isActive }) =>
+                            isActive ? "nav-item active" : "nav-item"
+                        }
+                    >
+                        <span className="emoji" aria-hidden="true">
+                            ✨
+                        </span>
+                        AI Assistant
+                    </NavLink>
+                    <NavLink
                         to="/favorites"
                         className={({ isActive }) =>
                             isActive ? "nav-item active" : "nav-item"
@@ -276,11 +289,19 @@ export default function App() {
                             }
                         />
                         <Route path="/history" element={<HistoryScreen />} />
+                        <Route
+                            path="/assistant"
+                            element={<AssistantScreen />}
+                        />
                         <Route path="/boq" element={<BoqScreen />} />
                         <Route path="*" element={<ListScreen mode="home" />} />
                     </Routes>
                 </main>
             </div>
+
+            {/* The full-page route already shows the panel; a floating copy on
+                top of it would be two conversations in one viewport. */}
+            {location.pathname !== "/assistant" && <ChatWidget />}
         </div>
     );
 }
